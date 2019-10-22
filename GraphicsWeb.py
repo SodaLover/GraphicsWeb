@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup as soup
 import re
 import requests
 import csv
-import os
 
 my_url = 'https://www.newegg.com/Video-Cards-Video-Devices/Category/ID-38?Tpk=Graphics%20Cards'
 print("Downloading Page")
@@ -46,4 +45,3 @@ for container in containers:
     shipping = shipping_container[0].text.strip()
 
     f.write("\n" + "brand: " + brand + "\n" + "product: " + product_name + "\n" + "shipping: " + shipping + "\n" + "---------------")
-os.system("mv " + filename + " ~/Scrapes")
